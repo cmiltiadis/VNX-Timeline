@@ -1,0 +1,8 @@
+#+title: Readme
+
+Submodule repository for Timeline visualization, using [[https://github.com/twitter/labella.js][Labella.js]] (see demo at [[https://twitter.github.io/labella.js/][Twitter / Labella.js]]).
+
+An earlier version of this made use of a version of Labella for Python by [[https://github.com/GjjvdBurg/labella.py][Gertjan van den Burg]].
+
+Structure
+- data folder
