@@ -1,8 +1,19 @@
-#+title: Readme
+#+title: Readme: VNX Timeline Javascript visualizer
 
-Submodule repository for Timeline visualization, using [[https://github.com/twitter/labella.js][Labella.js]] (see demo at [[https://twitter.github.io/labella.js/][Twitter / Labella.js]]).
 
-An earlier version of this made use of a version of Labella for Python by [[https://github.com/GjjvdBurg/labella.py][Gertjan van den Burg]].
+Javascript timeline visualizer based on [[https://twitter.github.io/labella.js/][Labella JS]] and [[https://github.com/kristw/d3kit-timeline][d3kit-timeline]] by Krist Wongsuphasawat (see demo at [[https://twitter.github.io/labella.js/][Twitter / Labella.js]]).
 
-Structure
-- data folder
+Used as submodule
+- [this is from d/labella/labella-new]
+
+-- Constantinos Miltiadis studioany.com 2024.
+
+* Documentation
++ Add CSV files into =/data/=
++ =index.html= runs the visualization
+
+
+* Dev history
+An earlier version of this project made use of a version of a Python version of the same library, [[https://github.com/GjjvdBurg/labella.py][Labella.py]] by Gertjan van den Burg, for outputting PDF and SVG visualizations.
+However, generating such files was time-intensive (~ 5minutes).
+Therefore, the JS version was eventually preferred due to the interactive and instant compilation of timelines.
