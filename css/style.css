@@ -1,0 +1,115 @@
+﻿h1 {
+        margin-top: 15px;
+    }
+
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        text-align: center;
+        background-color: #ffffff;
+    }
+
+    header {
+        display: inline-block;
+        width: 1000px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    footer {
+        text-align: center;
+        color: #aaa;
+        font-size: 12px;
+        font-weight: 300;
+        padding: 20px;
+    }
+
+    /* POPUP TEXT & CONTAINER */
+
+    #popup-container {
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    #popup {
+        display: none;
+        position: absolute;
+        left: 250px;
+        top: 500px;
+        min-width: 300px;
+        /* TEXT */
+        text-align: left;
+        font-size: 14px;
+
+        /* width: 150px; */
+        background: white;
+        padding: 5px;
+
+        /*BORDER*/
+        border: 1px solid red;
+        border-radius: 5px;
+    }
+
+    /* Spacing between paragraphs*/
+    #popup p {
+        margin-bottom: 5px;
+    }
+
+    #popup.visible {
+        display: block;
+    }
+
+    /* TIMELINE */
+
+    #timeline {
+        /* FIXED HEIGHT */
+        height: 60vh;
+        overflow-y: scroll;
+        border: 1px solid;
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    /* TIMELINE STYLES */
+
+    .chart-container {
+        margin-top: 15px;
+        /*distance of chart to UI */
+        text-align: center;
+    }
+
+    .chart-container svg {
+        background: #eee;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+");
+    }
+
+    /* timeline axis  */
+    .axis path {
+        fill: none;
+        stroke-width: 2px;
+        stroke: #222;
+    }
+
+    /* axis ticks */
+    .axis line {
+        fill: none;
+        stroke-width: 2px;
+        stroke: #222;
+    }
+
+    /* axis text  */
+    .axis text {
+        font-size: 16px;
+    }
+
+    /* linking lines  */
+    path.link {
+        stroke-width: 1px;
+        opacity: 0.6;
+    }
+
+    /* label text  */
+    text.label-text {
+        font-size: 14px;
+    }

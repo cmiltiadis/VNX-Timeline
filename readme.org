@@ -1,19 +1,55 @@
 #+title: Readme: VNX Timeline Javascript visualizer
 
 
-Javascript timeline visualizer based on [[https://twitter.github.io/labella.js/][Labella JS]] and [[https://github.com/kristw/d3kit-timeline][d3kit-timeline]] by Krist Wongsuphasawat (see demo at [[https://twitter.github.io/labella.js/][Twitter / Labella.js]]).
+Javascript timeline visualizer based on [[https://twitter.github.io/labella.js/][Labella.js]] and [[https://github.com/kristw/d3kit-timeline][d3kit-timeline]] by Krist Wongsuphasawat (see demo at [[https://twitter.github.io/labella.js/][Twitter / Labella.js]]).
 
-Used as submodule
-- [this is from d/labella/labella-new]
+The programs loads a JS object array and draws a timeline.
++ Entries are color coded, according to entry Type
++ Pop-up window on mouse over, showing additional information per entry.
++ Link to Sandpoints entry
+
 
 -- Constantinos Miltiadis studioany.com 2024.
 
-* Documentation
-+ Add CSV files into =/data/=
-+ =index.html= runs the visualization
+* Data file
+
+1. Organize data in a Google spreadsheet with the columns
+| Column name  | Description                                                                                        |
+|--------------+----------------------------------------------------------------------------------------------------|
+| *Name*         | Entry name (appears on label)                                                                      |
+| *Date*         | Entry date                                                                                        |
+| End date     | (optional) if the entry has an end date                                                            |
+| Approx       | Boolean, false by default. If the date of the entry is approximate. Will prefix the date in the description with =ca.= |
+| By           | (Optional) Authors and                                                                             |
+| Type         | Single value; for sorting/filtering entries                                                        |
+| Impact       | Single value; for sorting/filtering entries                                                        |
+| Tags         | Comma separated tags for sorting/filtering                                                         |
+| Genealogy    | For sorting/filtering                                                                              |
+| Internal URL | Relative URL to Sandpoints entry                                                                   |
+| Text         | Entry description                                                                                  |
+| Engine       | (Optional) Game engine for videogames                                                              |
+| URL          | External URL                                                                                       |
+| Notes        |                                                                                                    |
+
+2. Export to JSON with the plugin [[https://workspace.google.com/marketplace/app/export_sheet_data/903838927001][Export Sheet Data]].
+3. Rename exported file to =data.js= and prefix its contents with =const json= (so that when the file is loaded, the data will be saved in the constant =json=. )
+   #+begin_src js
+const json= { Title of first entry...   }
+   #+end_src
 
 
-* Dev history
-An earlier version of this project made use of a version of a Python version of the same library, [[https://github.com/GjjvdBurg/labella.py][Labella.py]] by Gertjan van den Burg, for outputting PDF and SVG visualizations.
-However, generating such files was time-intensive (~ 5minutes).
-Therefore, the JS version was eventually preferred due to the interactive and instant compilation of timelines.
+* Project directories
+1. Add =data.js= in the directory =/data/=.
+2. Add the required libraries in the =/lib/= directory:
+   1. [[https://angularjs.org/][Angular JS]]
+   2. Labella, Labella-extra
+   3. D3
+   4. D3Kit
+   5. D3Kit-timeline
+3. Add Bootrap to the =/css/= directory.
+4. Run [[file:index.html][index.html]]
+   1. This will load the JS libraries,
+   2.
+  
+* Development timeline
+A first version of this project made use of the Python version of the Labella library ([[https://github.com/GjjvdBurg/labella.py][Labella.py]] by Gertjan van den Burg), because of its capacity of outputting both PDF and SVG visualizations (via LaTeX). However, this implementation was extremely time intensive, requiring about 5 minutes to export a PDF. Eventually, I opted for the original Javascript version of this library that allowed for interaction and instant compilation of timeline visualizations.
