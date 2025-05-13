@@ -527,7 +527,8 @@ angular.module('app', [])
         function mouseClick(d, i) {
             // console.log("click on " + d.title);
             if (d.url) {
-                window.open("http://localhost:1313" + d.url);
+                // window.open("http://localhost:1313" + d.url);
+                window.open("../" + d.url);
             };
         }
         function mouseOver(d, i) {
